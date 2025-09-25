@@ -1,50 +1,56 @@
-Klickon Auth Demo – INT-SEC-02
+🚀 Klickon Auth Demo – INT-SEC-02
 
-This project is a secure and minimal Login/Register system designed to demonstrate how authentication systems are safely implemented in real-world applications. It provides a foundation for later penetration testing and security exercises.
+A secure and minimal Login/Register system built with Python and Flask, designed to demonstrate safe authentication practices in real-world applications. This project serves as a foundation for security testing and penetration exercises.
 
-Features
+✨ Features
+🔐 Register
 
-Register
+Users can register with:
 
-Users can register with a username, email, and password
+Username
 
-Passwords are hashed using bcrypt or argon2 before being stored
+Email
 
-Duplicate email registration is not allowed
+Password
 
-Login
+Passwords are hashed using bcrypt or argon2 for security.
 
-Users can log in using email and password
+Duplicate email registration is prevented.
 
-Successful login redirects to the dashboard
+🔑 Login
 
-Failed login shows a generic message: "Email or password is incorrect"
+Users can log in with email and password.
 
-No sessions or tokens are used (as per task requirements)
+Successful login redirects to a dashboard page.
 
-Dashboard
+Failed login shows a generic error message:
 
-Accessible only after successful login
+Email or password is incorrect
 
-Can display user-specific content
 
-Technologies
+No sessions or tokens are used (task requirement).
 
-Backend: Python + Flask
+📊 Dashboard
 
-Database: SQLite (MySQL is also supported)
+Accessible only after successful login.
 
-Password Hashing: bcrypt / argon2
+Can display user-specific content.
 
-Security measures: SQL injection protection, password hashing, and duplicate email checks
-
-Installation and Running
+🛠 Technologies
+Component	Technology
+Backend	Python + Flask
+Database	SQLite (MySQL optional)
+Password Hashing	bcrypt / argon2
+Security Measures	SQL injection prevention, password hashing, duplicate email check
+⚡ Installation & Running
 
 Create and activate a virtual environment:
 
 python -m venv venv
-source venv/bin/activate   # Linux/Mac
-venv\Scripts\activate      # Windows
+# Linux / Mac
+source venv/bin/activate
+# Windows
+venv\Scripts\activate
 
 
 Install dependencies:
@@ -57,14 +63,31 @@ Run the application:
 python app.py
 
 
-Open your browser:
+Open in your browser:
 
 http://127.0.0.1:5000
 
-Notes
+📝 Endpoints
+Route	Method	Description
+/register	GET/POST	User registration page/form
+/login	GET/POST	User login page/form
+/dashboard	GET	Dashboard page, protected
+🔒 Security Notes
 
-Passwords are never stored in plain text; they are securely hashed.
+Passwords are never stored in plain text – always hashed.
 
-This version is a secure baseline, ready for further development with sessions, tokens, or advanced security features.
+Duplicate email registrations are blocked.
 
-The project serves as a foundation for penetration testing and security learning exercises.
+SQL injection is mitigated through parameterized queries.
+
+Session or token management is intentionally excluded for this task.
+
+🎯 Project Goal
+
+This project demonstrates:
+
+How to create a secure authentication system.
+
+How to handle user data safely.
+
+A baseline system for future penetration testing exercises.
