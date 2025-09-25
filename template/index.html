@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+  <meta charset="UTF-8">
+  <title>Login & Register</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <!-- Font / CSS -->
+  <link rel='stylesheet' href='https://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css'>
+  <link rel='stylesheet' href='https://fonts.googleapis.com/css?family=Roboto:300,400,500'>
+  <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+  <div class="wrapper">
+    <div class="inner">
+      <div class="box back">
+        <h3>Qeydiyyat</h3>
+        <form action="{{ url_for('register') }}" method="post" autocomplete="off">
+          <div class="input">
+            <label for="username">İstifadəçi adı</label>
+            <input id="username" name="username" required />
+          </div>
+          <div class="input">
+            <label for="email">E-mail</label>
+            <input id="email" name="email" type="email" required />
+          </div>
+          <div class="input">
+            <label for="password">Şifrə</label>
+            <input id="password" name="password" type="password" required />
+          </div>
+          <button type="submit" class="btn">Qeydiyyat</button>
+        </form>
+      </div>
+
+      <div class="box front">
+        <h3>Daxil ol</h3>
+        <form action="{{ url_for('login') }}" method="post" autocomplete="off">
+          <div class="input">
+            <label for="email_login">E-mail</label>
+            <input id="email_login" name="email_login" type="email" required />
+          </div>
+          <div class="input">
+            <label for="password_login">Şifrə</label>
+            <input id="password_login" name="password_login" type="password" required />
+          </div>
+          <button type="submit" class="btn">Daxil ol</button>
+        </form>
+        {% if message %}
+          <div class="message">{{ message }}</div>
+        {% endif %}
+      </div>
+    </div>
+  </div>
+
+  <script src="{{ url_for('static', filename='script.js') }}"></script>
+</body>
+</html>
