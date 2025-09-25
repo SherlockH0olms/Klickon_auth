@@ -1,0 +1,3 @@
+Flask==2.3.2
+passlib[bcrypt]==1.7.4
+email-validator==1.3.1
